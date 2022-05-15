@@ -1,5 +1,19 @@
 import {ms} from '../utility';
 
+type weightType =
+  | 'normal'
+  | 'bold'
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900'
+  | undefined;
+
 export const size = {
   h1: ms(30),
   h2: ms(25),
@@ -9,15 +23,13 @@ export const size = {
   h6: ms(14),
 };
 
-export const family = {
-  poppinsLight: 'Poppins-Light',
-  poppinsMedium: 'Poppins-Medium',
-  poppinsRegular: 'Poppins-Regular',
-  poppinsSemiBold: 'Poppins-SemiBold',
-  poppinsBold: 'Poppins-Bold',
-};
-
-export const weight = {
+export const weight: {
+  bold: weightType;
+  light: weightType;
+  medium: weightType;
+  semiBold: weightType;
+  regular: weightType;
+} = {
   light: '300',
   medium: '500',
   regular: '600',
