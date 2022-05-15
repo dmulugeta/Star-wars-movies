@@ -7,4 +7,12 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: COLORS.BLACK,
   },
+  conditionContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textStyle: {
+    color: COLORS.WHITE,
+  },
 });

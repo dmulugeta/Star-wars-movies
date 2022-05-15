@@ -4,7 +4,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import {fetchFilms$} from '../../services/films/fetchFilms';
 import {AppDispatch, RootState} from '../../app/store';
 import {Container, MovieCard} from '../../components';
-import {FlatList, Text} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View} from 'react-native';
+import {styles} from './styles';
+import {COLORS, FlexCenter} from '../../themes';
 
 export const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -16,9 +18,16 @@ export const Home = () => {
 
   return (
     <Container>
-      {film?.loading ? <Text>Loading...</Text> : null}
+      {film?.loading ? (
+        <View style={styles.conditionContainer}>
+          <ActivityIndicator size="large" color={COLORS.WHITE} />
+          <Text style={styles.textStyle}>Loading...</Text>
+        </View>
+      ) : null}
       {!film?.loading && film?.error ? (
-        <Text>Error : {film?.error}</Text>
+        <View style={styles.conditionContainer}>
+          <Text>Error : {film?.error}</Text>
+        </View>
       ) : null}
       {!film?.loading && !film?.error ? (
         <FlatList
