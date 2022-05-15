@@ -5,10 +5,12 @@ import {
   ImageBackground,
   Pressable,
   ScrollView,
+  FlatList,
 } from 'react-native';
 import React from 'react';
 import {Container} from '../../components';
 import {styles} from './styles';
+import Character from '../../components/Character';
 
 interface IProps {
   navigation: any;
@@ -21,7 +23,7 @@ interface IProps {
 
 export const Detail: React.FC<IProps> = ({navigation, route}) => {
   const {filmDetail} = route.params;
-  const {title, director, opening_crawl, release_date} = filmDetail;
+  const {title, director, opening_crawl, release_date, characters} = filmDetail;
 
   const handleGoBack = () => {
     navigation.goBack();
@@ -55,6 +57,13 @@ export const Detail: React.FC<IProps> = ({navigation, route}) => {
             </View>
             <View style={styles.filmDetails}>
               <Text style={styles.detail}>Director by {director}</Text>
+              <FlatList
+                data={characters}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({item}) => <Character />}
+              />
+              <Text style={styles.detail}>Story Line</Text>
               <Text style={styles.opening_crawl}>{opening_crawl}</Text>
             </View>
           </View>

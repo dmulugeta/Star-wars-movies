@@ -64,12 +64,11 @@ export const styles = StyleSheet.create({
     fontWeight: weight.regular,
     color: 'white',
     opacity: 0.8,
-    marginTop: ms(10),
     textAlign: 'justify',
   },
   filmDetails: {
     flex: 1,
-    marginTop: ms(60),
-    marginHorizontal: ms(30),
+    marginTop: ms(40),
+    marginLeft: ms(30),
   },
 });
