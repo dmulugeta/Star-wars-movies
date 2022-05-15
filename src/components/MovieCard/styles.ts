@@ -9,17 +9,25 @@ export const styles = StyleSheet.create({
     marginBottom: vs(20),
     borderRadius: 10,
     backgroundColor: COLORS.WHITE,
-    padding: vs(10),
   },
   title: {
     fontSize: size.h4,
-    color: COLORS.BLACK,
+    color: COLORS.WHITE,
     fontWeight: weight.bold,
   },
   date: {
     fontSize: size.h5,
-    color: COLORS.BLACK,
+    color: COLORS.WHITE,
     fontWeight: weight.medium,
     marginTop: vs(10),
+  },
+  posterImage: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+  },
+  content: {
+    padding: vs(10),
   },
 });

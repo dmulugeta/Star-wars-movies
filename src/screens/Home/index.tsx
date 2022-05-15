@@ -22,6 +22,8 @@ export const Home = () => {
       ) : null}
       {!film?.loading && !film?.error ? (
         <FlatList
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item, index) => index.toString()}
           data={film?.films?.results}
           renderItem={({item}) => <MovieCard {...item} />}
         />
